@@ -1,24 +1,4 @@
 
-**TODO**: Delete these instructions before you submit your work.
-## Instructions
-
-1. Read Chapters 2 & 3 of [Pro Git][ProGit]. The chapters are short.
-2. Answer these questions using [Markdown format][markdown-cheatsheet] (also [Github Markdown][github-markdown]). 
-3. Place your answers between lines beginning with 3 backquotes, which tells Markdown it should be unformatted text, and write only the commands you would type (**no** shell prompt).  E.g.:
-   ```
-   git status         CORRECT
-   $ git status       WRONG  - you do not type "$"
-   ```
-4. Indent the 3 backquotes so they line up with the question text (3 leading spaces) so Markdown formats you answer as part of the numbered item.
-   Example:
-   ```
-   git init
-   ```  
-5. **Test that your answers are correct!** There is **no excuse** for incorrect answers since you can test your answers by experimentation.      
-6. Verify that your Markdown formatting is correct -- points deducted for bad formatting. VS Code and IntelliJ have markdown previewers. You should also preview it on Github, since Github Markdown is a bit non-standard.
-
-**TODO**: Delete these instructions before you submit your work. Points deducted for each "TODO" in this file.
-
 ## Using Git
 
 [Basics](#basics)    
@@ -70,7 +50,6 @@ test/
     test_a.py
     ...
 ```     
-> TODO: Write the git command to perform each of these:
 
 1. Add README.md and *everything* in the `src` directory to the git staging area.
    ```
@@ -122,9 +101,6 @@ test/
 
 
 ## Undo Changes and Recover Files
-
-> TODO: enter the git command to do each of these
-> For questions where you are showing a command, use triple-backquote marks (as above) so the text is formatted as code.
 
 1. Display the differences between your *working copy* of `a.py` and the `a.py` in the *local repository* (HEAD revision):
       ```
@@ -198,39 +174,57 @@ test/
 
 ## Branch and Merge
 
-**TODO**: This section is free-form.  Create 4 numbered items for common branch-and-merge tasks you would like to remember and show the git command to do each one. (You are write *more* than 4 if you want.)
-
-For me, I sometimes forget very simple command. Rarely used command won't be much of a problem since if it's rarely used, I'll rarely searched them up. But If I forget commonly used ones, it's going to be annoying searching them up all the time. So I'd like to remember these one and never forget them.
 1. **Creating a New Branch:**
    ```
    git checkout -b branch-name
    ```
    
-2. **Creating a New Branch:**
+2. **Switching Between Branches:**
    ```
-   git checkout -b branch-name
+   git checkout branch-name
    ```
 
-3. **Creating a New Branch:**
+3. **Merging a Branch:**
    ```
-   git checkout -b branch-name
+   git merge source-branch
    ```
    
-4. **Creating a New Branch:**
+4. **Deleting a Branch:**
    ```
-   git checkout -b branch-name
+   git branch -d branch-name
    ```
 
 ## Favorites
 
-> TODO: Describe *at least* 1 task that you would like to remember, and the git command(s) to do it.
+>For me, I sometimes forget very simple commands. Rarely used commands won't be much of a problem since if it's rarely used, I'll rarely need to search them up. But If I forget commonly used ones, it's going to be annoying searching them up all the time. So I'd like to remember these and never forget them.
 
+1. **Checking Status and Changes:**
+   ```
+   git status
+   git diff
+   ```
+   
+2. **Checking Commit History:**
+   ```
+   git log
+   git log --oneline
+   ```
 
+3. **Undoing Changes Before Staging:**
+   ```
+   git restore file-name
+   ```
+
+4. **Undoing Changes After Staging:**
+   ```
+   git restore --staged file-name
+   ```
 
 ---
 ## Resources
 
-> TODO: Add your favorite Git resources (at least 1)
+
+> [Git Immersion](https://gitimmersion.com/) git tutorial that help with the basics well
 
 * [Pro Git Online Book][ProGit] Chapters 2 & 3 contain the essentials. Downloadable e-book is available, too. 
 * [Visual Git Reference](https://marklodato.github.io/visual-git-guide) one page with illustrations of git commands.
