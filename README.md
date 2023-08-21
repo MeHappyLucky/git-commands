@@ -38,22 +38,23 @@ In this file, directory paths are written with a forward slash as on MacOS, Linu
 ## Basics
 
 1. When using Git locally, what are these?  Define each one in a sentence
-   * Staging area -
-   * Working copy -
-   * master -
-   * HEAD -
+   * Staging area - Where you get things ready before committing the changes.
+   * Working copy - The version that you're actively working on.
+   * master - The main version of your project.
+   * HEAD - A pointer to the latest changes you've made.
 
 2. When you install git on a new machine (or in a new user account) you should perform these 2 git commands to tell git your name and email.  These values are used in commits that you make:
    ```
    # Git configuration commands for a new account
-
-
+   git config --global user.name "Your Username"
+   git config --global user.email "emailName@youremail.com"
    ```
 
 3. There are 2 ways to create a local Git repository.  Briefly descibe each one:
-   - todo: describe first way to create a local repo
-   - todo: describe second way to create a local repo
-
+   ```
+   first way: use "git init" creating a new repo from nothing
+   second way: use "git clone" cloning a repo from a remote server
+   ```
 
 ## Adding and Changing Things
 
@@ -73,39 +74,45 @@ test/
 
 1. Add README.md and *everything* in the `src` directory to the git staging area.
    ```
-   todo  your answer here
+   git add README.md src/
    ```
 
 2. Add `test/test_a.py` to the staging area (but not any other files).
    ```
-   todo  your answer
+   git add test/test_a.py
    ```
 
 3. List the names of files in the staging area.
    ```
-   todo  your answer
+   git status
    ```
 
 4. Remove `README.md` from the staging area. This is **very useful** if you accidentally add something you don't want to commit.
    ```
-   todo  your answer
+   git reset README.md
    ```
 
 5. Commit everything in the staging area to the repository.
    ```
-   todo  your answer
+   git commit -m "commit message here"
    ```
 
 6. In any project, there are some files and directories that you **should not** commit to git.    
    For a Python project, name *at least* files or directories that you should not commit to git:
-   - 
-   - 
-   -
+   ```
+   *.pyc
+   __pycache__/
+   .DS_Store
+   venv/
+   virtualenv/
+   *.log
+   *.pyo
+   ```
 
 
 7. Command to move all the .py files from the `src` dir to the top-level directory of this repository. This command moves them in your working copy *and* in the git repo (when you commit the change):
    ```
-
+   git mv src/*.py .
    ```
 
 
@@ -119,30 +126,41 @@ test/
 > TODO: enter the git command to do each of these
 > For questions where you are showing a command, use triple-backquote marks (as above) so the text is formatted as code.
 
-1.  Display the differences between your *working copy* of `a.py` and the `a.py` in the *local repository* (HEAD revision):
-
+1. Display the differences between your *working copy* of `a.py` and the `a.py` in the *local repository* (HEAD revision):
+      ```
+      git diff a.py
+      ```
 
 2. Display the differences between your *working copy* of `a.py` and the version in the *staging area*. (But, if a.py is not in the staging area this will compare working copy to HEAD revision):
-
+   ```
+   git diff --staged a.py
+   ```
 3. **View changes to be committed:** Display the differences between files in the staging area and the versions in the repository. (You can also specify a file name to compare just one file.) 
-
-
+   ```
+   git diff --cached
+   ```
 4. **Undo "git add":** If `main.py` has been added to the staging area (`git add main.py`), remove it from the staging area:
-
+   ```
+   git reset main.py
+   ```
 
 5. **Recover a file:** Command to replace your working copy of `a.py` with the most recent (HEAD) version in the repository.  This also works if you have deleted your working copy of this file.
-
+   ```
+   git checkout HEAD -- a.py
+   ```
 
 6. **Undo a commit:** Suppose you want to discard some commit(s) and move both HEAD and "master" to an earlier revision (an earlier commit)  Suppose the git commit graph looks like this (`aaaa`, etc, are the commit ids)
    ```
    aaaa ---> bbbb ---> cccc ---> dddd [HEAD -> master]
    ``` 
    The command to reset HEAD and master to the commit id `bbbb`:
-
+   ```
+   git reset --hard bbbb
+   ```
 
 7. **Checkout old code:** Using the above example, the command to replace your working copy with the files from commit with id `aaaa`:
    ```
-   todo your answer here
+   git checkout aaaa -- .
    ```
     Note:
     - Git won't let you do this if you have uncommitted changes to any "tracked" files.
@@ -159,13 +177,13 @@ test/
 
 2. Show the history (as above) including *all* branches in the repository and include a graph connecting the commits:
    ```
-
+   git log --oneline --graph --all
    ```
 
 
 3. List all the files in the current branch of the repository:
    ```
-   todo your answer
+   git ls-tree --name-only HEAD
    ```
    Example output:
    ```
@@ -182,7 +200,26 @@ test/
 
 **TODO**: This section is free-form.  Create 4 numbered items for common branch-and-merge tasks you would like to remember and show the git command to do each one. (You are write *more* than 4 if you want.)
 
+For me, I sometimes forget very simple command. Rarely used command won't be much of a problem since if it's rarely used, I'll rarely searched them up. But If I forget commonly used ones, it's going to be annoying searching them up all the time. So I'd like to remember these one and never forget them.
+1. **Creating a New Branch:**
+   ```
+   git checkout -b branch-name
+   ```
+   
+2. **Creating a New Branch:**
+   ```
+   git checkout -b branch-name
+   ```
 
+3. **Creating a New Branch:**
+   ```
+   git checkout -b branch-name
+   ```
+   
+4. **Creating a New Branch:**
+   ```
+   git checkout -b branch-name
+   ```
 
 ## Favorites
 
