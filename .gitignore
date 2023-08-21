@@ -1,0 +1,11 @@
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+
+# pytest output
+/pytest_cache/
+/__pycache__/
+
+# macOS junk
+.DS_Store
